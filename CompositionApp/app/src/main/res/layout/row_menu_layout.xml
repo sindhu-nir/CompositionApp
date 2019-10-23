@@ -1,0 +1,80 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="6dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:id="@+id/rowList"
+        >
+
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/cardImageView"
+            android:layout_marginTop="5dp"
+            android:layout_width="150dp"
+            android:scaleType="fitCenter"
+            android:layout_height="140dp"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bar"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+
+            />
+
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_light"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:layout_below="@+id/cardImageView"
+
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/categoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:textColor="#424242"
+                android:padding="5dp"
+                android:text="T-Shirt 001"
+                android:layout_weight=".8"/>
+
+
+            <TextView
+                android:id="@+id/categoryDescription"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#424242"
+                android:layout_marginRight="10dp"
+                android:textSize="12sp"
+                android:padding="5dp"
+                android:text="10000 BDT"
+                android:layout_weight=".2"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
