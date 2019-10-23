@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 categoryAdapter.notifyDataSetChanged();
 
             }
+            else{
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(this, "Nothing Found", Toast.LENGTH_SHORT).show();
+
+            }
         });
 
 
