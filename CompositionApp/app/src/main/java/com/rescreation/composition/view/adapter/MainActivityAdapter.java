@@ -1,6 +1,7 @@
 package com.rescreation.composition.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.rescreation.composition.R;
 import com.rescreation.composition.model.Category;
 import com.rescreation.composition.view.ui.MainActivity;
+import com.rescreation.composition.view.ui.ProductActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -65,6 +67,9 @@ public class MainActivityAdapter   extends RecyclerView.Adapter<MainActivityAdap
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Clicked "+categoryArrayList.get(position).getMenu_name(), Toast.LENGTH_SHORT).show();
+                Intent productIntent=new Intent(context, ProductActivity.class);
+                productIntent.putExtra("cat_id",categoryArrayList.get(position).getId().toString());
+                context.startActivity(productIntent);
 
             }
         });
