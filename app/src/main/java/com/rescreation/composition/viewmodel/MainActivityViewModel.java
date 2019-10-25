@@ -30,7 +30,6 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public LiveData<CategoryResponse> getCategoryRepository() {
-
         if(mutableLiveData==null){
             mutableLiveData=categoryRepository.getCategoryList();
         }
