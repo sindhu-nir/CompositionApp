@@ -66,7 +66,7 @@ public class MainActivityAdapter   extends RecyclerView.Adapter<MainActivityAdap
         holder.rowList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked "+categoryArrayList.get(position).getMenu_name(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(context, "Clicked "+categoryArrayList.get(position).getMenu_name(), Toast.LENGTH_SHORT).show();
                 Intent productIntent=new Intent(context, ProductActivity.class);
                 productIntent.putExtra("cat_id",categoryArrayList.get(position).getId().toString());
                 context.startActivity(productIntent);

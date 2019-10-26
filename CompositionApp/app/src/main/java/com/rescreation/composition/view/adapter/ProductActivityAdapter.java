@@ -16,6 +16,7 @@ import com.rescreation.composition.R;
 import com.rescreation.composition.model.Category;
 import com.rescreation.composition.model.Product;
 import com.rescreation.composition.view.ui.ProductActivity;
+import com.rescreation.composition.view.ui.WebViewActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -68,10 +69,10 @@ public class ProductActivityAdapter extends RecyclerView.Adapter<ProductActivity
         holder.rowList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked "+productArrayList.get(position).getProduct_name(), Toast.LENGTH_SHORT).show();
-//                Intent productIntent=new Intent(context, ProductActivity.class);
-//                productIntent.putExtra("cat_id",categoryArrayList.get(position).getId().toString());
-//                context.startActivity(productIntent);
+                //Toast.makeText(context, "Clicked "+productArrayList.get(position).getProduct_name(), Toast.LENGTH_SHORT).show();
+                Intent productIntent=new Intent(context, WebViewActivity.class);
+                productIntent.putExtra("product_name",productArrayList.get(position).getProduct_name().toString());
+                context.startActivity(productIntent);
 
             }
         });
