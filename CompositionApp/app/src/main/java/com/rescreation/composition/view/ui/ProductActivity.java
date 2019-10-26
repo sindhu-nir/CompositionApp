@@ -53,7 +53,7 @@ public class ProductActivity extends AppCompatActivity {
 
         setupRecyclerView();
         productActivityViewModel.getProductRepository().observe(this, productResponse -> {
-            if (productResponse!=null) {
+            if (productResponse!=null && productResponse.getSuccess().equals("true")) {
                 progressBar.setVisibility(View.GONE);
                 List<Product> productList = productResponse.getProducts();
                 productArrayList.addAll(productList);

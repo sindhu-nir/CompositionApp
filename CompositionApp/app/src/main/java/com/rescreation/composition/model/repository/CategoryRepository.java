@@ -11,7 +11,7 @@ import retrofit2.Response;
 public class CategoryRepository {
 
 
-    public static CategoryRepository categoryRepository;
+    public  static CategoryRepository categoryRepository;
 
     public static CategoryRepository getInstance(){
         if (categoryRepository == null){
@@ -22,10 +22,14 @@ public class CategoryRepository {
 
     public   RetrofitService retrofitService;
 
+
     public CategoryRepository(){
         retrofitService = RetrofitClient.cteateService(RetrofitService.class);
+        //mutableLiveData= new MutableLiveData<>();
 
     }
+
+
 
 
     public MutableLiveData<CategoryResponse> getCategoryList(){
