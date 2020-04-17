@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d0d3d4"
     tools:context=".view.ui.MainActivity">
 
     <LinearLayout
@@ -12,27 +13,140 @@
         android:orientation="vertical">
 
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            >
+
+
+            <ImageButton
+                android:id="@+id/backImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@android:color/transparent"
+                android:src="@drawable/exit_icon" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="Compositions"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/feedbackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/button_background_2"
+                android:text="feedback"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/titillium_bold"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat" />
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/rlHeaderSpace"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="5"
+            android:visibility="gone"
+            >
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBodySpace"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="85"
+
+            >
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/b2"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            />
+
+        <com.glide.slider.library.SliderLayout
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorPrimary"
+
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/menuRecycleView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/slider"
+            android:layout_centerHorizontal="true"
+
+            >
 
         </androidx.recyclerview.widget.RecyclerView>
 
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:visibility="visible"
+                android:layout_centerInParent="true"
+                />
 
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_id">
+            </com.google.android.gms.ads.AdView>
+
+
+        </RelativeLayout>
 
     </LinearLayout>
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:visibility="visible"
-        android:layout_centerInParent="true"
-        />
+
+
+    <RelativeLayout
+        android:id="@+id/rlFooterSpace"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0">
+
+    </RelativeLayout>
 
 </RelativeLayout>

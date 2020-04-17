@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d0d3d4"
     tools:context=".view.ui.ProductActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,28 +14,141 @@
         android:orientation="vertical">
 
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/productRecycleView"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
 
 
+            <ImageButton
+                android:id="@+id/backImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_icon" />
 
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="Category"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:clickable="true"
+                android:gravity="right"
+                android:queryHint="Search Here"
+                android:textColor="@android:color/white"
+                android:visibility="visible"
+                android:backgroundTint="#FFFFFF"
+                android:searchIcon="@drawable/search_icon"
+                android:queryBackground="@android:color/white"
+
+
+                />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <RelativeLayout
+            android:id="@+id/rlHeaderSpace"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="2">
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlBodySpace"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="88"
+
+            >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/b3"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/emptyAnimation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:foregroundGravity="center"
+                android:visibility="invisible"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="empty_box.json"
+                app:lottie_loop="true"
+
+                />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible" />
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_id">
+            </com.google.android.gms.ads.AdView>
+        </RelativeLayout>
     </LinearLayout>
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:visibility="visible"
-        android:layout_centerInParent="true"
-        />
+
+    <RelativeLayout
+        android:id="@+id/rlFooterSpace"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0">
+
+    </RelativeLayout>
 
 
 

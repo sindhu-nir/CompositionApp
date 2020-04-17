@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.rescreation.composition.R;
 import com.rescreation.composition.model.Category;
 import com.rescreation.composition.view.ui.MainActivity;
@@ -36,16 +37,15 @@ public class MainActivityAdapter   extends RecyclerView.Adapter<MainActivityAdap
     @NonNull
     @Override
     public MainActivityAdapter.MainActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.row_menu_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.row_menu_layout2, parent, false);
         return new  MainActivityViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MainActivityAdapter.MainActivityViewHolder holder, int position) {
-        holder.categoryName.setText(categoryArrayList.get(position).getMenu_name());
+        //holder.categoryName.setText(categoryArrayList.get(position).getMenu_name());
         holder.categoryDescription.setText(categoryArrayList.get(position).getMenu_description());
        // Picasso.get().load(categoryArrayList.get(position).getMenu_image()).into(holder.cardImageView);
-
         final ProgressBar progressView = holder.progressBar;
         Picasso.get().load(categoryArrayList.get(position).getMenu_image())
                 //    .transform(new RoundedTransformation(15, 0))
@@ -69,6 +69,7 @@ public class MainActivityAdapter   extends RecyclerView.Adapter<MainActivityAdap
               //  Toast.makeText(context, "Clicked "+categoryArrayList.get(position).getMenu_name(), Toast.LENGTH_SHORT).show();
                 Intent productIntent=new Intent(context, ProductActivity.class);
                 productIntent.putExtra("cat_id",categoryArrayList.get(position).getId().toString());
+                productIntent.putExtra("cat_name",categoryArrayList.get(position).getMenu_name().toLowerCase());
                 context.startActivity(productIntent);
 
             }
@@ -82,16 +83,18 @@ public class MainActivityAdapter   extends RecyclerView.Adapter<MainActivityAdap
 
     public class MainActivityViewHolder extends RecyclerView.ViewHolder{
 
-        TextView categoryName;
+       // TextView categoryName;
         TextView categoryDescription;
         ImageView cardImageView;
         ProgressBar progressBar;
         RelativeLayout rowList;
+       // LottieAnimationView openBookAnimation;
 
         public MainActivityViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            categoryName = itemView.findViewById(R.id.categoryName);
+            //categoryName = itemView.findViewById(R.id.categoryName);
+            //openBookAnimation = itemView.findViewById(R.id.openBookAnimation);
             categoryDescription = itemView.findViewById(R.id.categoryDescription);
             cardImageView = itemView.findViewById(R.id.cardImageView);
             progressBar = itemView.findViewById(R.id.bar);

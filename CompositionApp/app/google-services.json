@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "737805253136",
+    "firebase_url": "https://compapp-d809f.firebaseio.com",
+    "project_id": "compapp-d809f",
+    "storage_bucket": "compapp-d809f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737805253136:android:dfe5c8801a813c47016895",
+        "android_client_info": {
+          "package_name": "com.rescreation.composition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737805253136-58clir1mclo7b72nb22i5da3jthf9jls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsobhTGfZhlwG3Mvxne27eIYVQqbnBEZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737805253136-58clir1mclo7b72nb22i5da3jthf9jls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6785845931993215~2710499023"
+    }
+  ],
+  "configuration_version": "1"
+}

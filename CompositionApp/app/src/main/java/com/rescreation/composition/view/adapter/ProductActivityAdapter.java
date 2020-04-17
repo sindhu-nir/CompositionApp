@@ -21,18 +21,27 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ProductActivityAdapter extends RecyclerView.Adapter<ProductActivityAdapter.ProductActivityViewHolder> {
 
     Context context;
     ArrayList<Product> productArrayList;
+    ArrayList<Product> arraylist;
+    ArrayList<Product> totalDatalist;
+    String catName="";
 
-    public ProductActivityAdapter(Context context, ArrayList<Product> productArrayList) {
+    public ProductActivityAdapter(Context context, ArrayList<Product> productArrayList,String catName) {
         this.context = context;
+        this.catName = catName;
         this.productArrayList = productArrayList;
+        this.arraylist = new ArrayList<Product>();
+        this.arraylist.addAll(productArrayList);
+
     }
 
 
@@ -72,6 +81,7 @@ public class ProductActivityAdapter extends RecyclerView.Adapter<ProductActivity
                 //Toast.makeText(context, "Clicked "+productArrayList.get(position).getProduct_name(), Toast.LENGTH_SHORT).show();
                 Intent productIntent=new Intent(context, WebViewActivity.class);
                 productIntent.putExtra("product_name",productArrayList.get(position).getProduct_name().toString());
+                productIntent.putExtra("catName",catName);
                 context.startActivity(productIntent);
 
             }
@@ -89,7 +99,7 @@ public class ProductActivityAdapter extends RecyclerView.Adapter<ProductActivity
         TextView productDescription;
         ImageView cardImageView;
         ProgressBar progressBar;
-        LinearLayout rowList;
+        CardView rowList;
 
         public ProductActivityViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -101,5 +111,28 @@ public class ProductActivityAdapter extends RecyclerView.Adapter<ProductActivity
             rowList = itemView.findViewById(R.id.rowList);
 
         }
+    }
+
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+
+        if(arraylist.size()<1){
+            arraylist.clear();
+            arraylist.addAll(productArrayList);
+        }
+
+        productArrayList.clear();
+
+        if (charText.length() == 0) {
+            productArrayList.addAll(arraylist);
+        } else {
+            for (Product wp : arraylist) {
+                if (wp.getProduct_description().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    productArrayList.add(wp);
+                }
+
+            }
+        }
+        notifyDataSetChanged();
     }
 }

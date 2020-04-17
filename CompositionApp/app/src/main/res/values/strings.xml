@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">CompApp</string>
+    <string name="app_name">English Composition</string>
+    <string name="app_name2">CompApp</string>
+    <!-- AdMob ad unit IDs -->
+    <string name="admob_app_id">ca-app-pub-2781277018964040~3616119027</string>
+    <string name="banner_ad_id">ca-app-pub-2781277018964040/2697389640</string>
+    <string name="interstitial_ad_id">ca-app-pub-2781277018964040/9952108840</string>
+
+    <string name="testBanner">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="testInterstitial">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="courtesy">© 2020 | RES Creation</string>
 </resources>

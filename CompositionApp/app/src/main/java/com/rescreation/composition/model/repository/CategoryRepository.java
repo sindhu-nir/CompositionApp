@@ -41,6 +41,9 @@ public class CategoryRepository {
                 if (response.isSuccessful()){
                     mutableLiveData.setValue(response.body());
                 }
+                else{
+                    System.out.println("Nothing");
+                }
             }
 
             @Override

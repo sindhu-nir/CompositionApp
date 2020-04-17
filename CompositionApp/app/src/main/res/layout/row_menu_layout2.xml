@@ -1,0 +1,45 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="130dp"
+    android:layout_height="120dp"
+    style="@style/homegridcard"
+    card_view:cardCornerRadius="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rowList"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/cardImageView"
+            style="@style/homegridimage"
+            android:src="@drawable/exit_icon"
+            android:layout_centerInParent="true"
+            />
+
+        <TextView
+            style="@style/homegridtext"
+            android:layout_below="@id/cardImageView"
+            android:text="categoryDescription"
+            android:id="@+id/categoryDescription"
+            android:fontFamily="@font/titillium_bold"
+            />
+
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bar"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:paddingBottom="60dp"
+
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
